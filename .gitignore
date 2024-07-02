@@ -398,4 +398,10 @@ FodyWeavers.xsd
 *.sln.iml
 
 # Jupyter Notebook
+.ipynb_checkpoints
 .ipynb_checkpoints/*
+*.gguf
+*.safetensor
+*.pdf
+sampledata.jsonl
+llama.cpp

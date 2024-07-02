@@ -1,0 +1,2 @@
+# Web API
+Run a Web API on my server, with a loaded Llama 3 model, 'north/north-llama3-8b-ggml/[llava-llama-3-8b-v1_1-int4.gguf](https://huggingface.co/north/north-llama3-8b-ggml/resolve/main/north-llama3-v0.01.gguf)', to send queries to through an MAUI app, keeping history in the MAUI app (primary target: windows)
