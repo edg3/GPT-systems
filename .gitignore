@@ -410,4 +410,4 @@ llama.cpp
 *.safetensors
 *.gguf
 godot-docs-html-stable/
-godot-docs-text/*.txt
+*.txt
