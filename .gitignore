@@ -411,3 +411,5 @@ llama.cpp
 *.gguf
 godot-docs-html-stable/
 *.txt
+*.lock
+model/
