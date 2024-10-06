@@ -405,3 +405,11 @@ FodyWeavers.xsd
 *.pdf
 sampledata.jsonl
 llama.cpp
+
+# Extras
+*.safetensors
+*.gguf
+godot-docs-html-stable/
+*.txt
+*.lock
+model/
