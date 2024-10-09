@@ -413,3 +413,4 @@ godot-docs-html-stable/
 *.txt
 *.lock
 model/
+test_trainer/*
