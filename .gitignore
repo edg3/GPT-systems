@@ -414,3 +414,5 @@ godot-docs-html-stable/
 *.lock
 model/
 test_trainer/
+godot43llama27b/
+05.train-phi-3.5/data/train-smart.csv

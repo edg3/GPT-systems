@@ -1,0 +1,35 @@
+
+task: llm-sft
+base_model: content/
+project_name: godot43llama27b
+log: tensorboard
+backend: local
+
+data:
+  path: data/
+  train_split: train
+  valid_split: null
+  chat_template: null
+  column_mapping:
+    text_column: text
+
+params:
+  block_size: 1024
+  lr: 0.0002
+  warmup_ratio: 0.1
+  weight_decay: 0.01
+  epochs: 1
+  batch_size: 1
+  gradient_accumulation: 4
+  mixed_precision: fp16
+  peft: True
+  quantization: int4
+  lora_r: 16
+  lora_alpha: 32
+  lora_dropout: 0.05
+  unsloth: False
+
+hub:
+  username: ${HF_USERNAME}
+  token: ${HF_TOKEN}
+  push_to_hub: False
