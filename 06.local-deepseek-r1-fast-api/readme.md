@@ -139,7 +139,8 @@ By following these steps, you can create and integrate detailed 3D character ani
 ```
 
 7. We need to still have ollama running, but you can use ```OLLAMA_HOST=127.0.0.1:11435 ollama serve``` and ```ollama run deepseek-r1:8b``` to run them it. **Note: I do get inconsistency in my local for the ports despite specifying 11435, unsure about that thought.**
-11. You can use curl to make an API call:
+
+8. You can use curl to make an API call:
 
 ```
 curl http://localhost:11434/api/generate -d '{
@@ -147,8 +148,7 @@ curl http://localhost:11434/api/generate -d '{
   "prompt": "Why is the sky blue?"
 }'
 ```
-
-8. Add the following to your *<windows_user_profile>/.wslconfig* (create if not there):
+Add the following to your *<windows_user_profile>/.wslconfig* (create if not there):
 
 ```
 [wsl2]
