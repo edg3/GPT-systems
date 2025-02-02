@@ -138,7 +138,7 @@ To animate a 3D character in Godot 4.3, follow these organized steps:
 By following these steps, you can create and integrate detailed 3D character animations into your Godot project effectively.
 ```
 
-10. We need to still have ollama running, but you can use ```OLLAMA_HOST=127.0.0.1:11435 ollama serve``` and ```ollama run deepseek-r1:8b``` to run them it. **Note: I do get inconsistency in my local for the ports despite specifying 11435, unsure about that thought.**
+7. We need to still have ollama running, but you can use ```OLLAMA_HOST=127.0.0.1:11435 ollama serve``` and ```ollama run deepseek-r1:8b``` to run them it. **Note: I do get inconsistency in my local for the ports despite specifying 11435, unsure about that thought.**
 11. You can use curl to make an API call:
 
 ```
@@ -148,7 +148,7 @@ curl http://localhost:11434/api/generate -d '{
 }'
 ```
 
-12. Add the following to your *<windows_user_profile>/.wslconfig* (create if not there):
+8. Add the following to your *<windows_user_profile>/.wslconfig* (create if not there):
 
 ```
 [wsl2]
@@ -158,7 +158,7 @@ networkingMode=mirrored
 
 ```wsl --shutdown``` from command prompt then ```wsl``` to restart it.
 
-12. Running the paython script in Win11 after sorting 11, it gave the start of the response:
+9. Running the paython script in Win11 after sorting 11, it gave the start of the response:
 
 ```
 PS D:\...> python .\client-request.py
@@ -170,7 +170,7 @@ Execution time: 218.64354467391968 seconds
 Okay, so I'm trying to figure out how to create a simple 2D procedurally generated world using my own implemented seeded Perlin noise instead of the built-in noise functions in Godot 4.3 with C#. ...
 ```
 
-13. Using the steps shared in ```client-request.cs``` in the same directory, and using copilot to convert the pythony code to C#: and clean up, received the response:
+10. Using the steps shared in ```client-request.cs``` in the same directory, and using copilot to convert the pythony code to C#: and clean up, received the response:
 
 ```
 PS D:\...> dotnet run
@@ -182,7 +182,7 @@ Execution time: 107,2315056 seconds
 Okay, so I want to create a simple 2D procedurally generated world using my own seeded Perlin noise in Godot 4.3 with C#. ...
 ```
 
-14. To generate a VSCode plugin that uses this API in windows, in a folder, and you can stick with the default values:
+11. To generate a VSCode plugin that uses this API in windows, in a folder, and you can stick with the default values:
 
 ```shell
 npx --package yo --package generator-code -- yo code
@@ -190,7 +190,7 @@ npx --package yo --package generator-code -- yo code
 
 I won't give steps as a tutorial; but you can see how the model running using step 11 can answer me inside VSCode in a readable format in the editor itself. Note that it needs decent explanations and context, and it's adjusted so the thinking process shows after the result.
 
-15. Build the VSCode extension
+12. Build the VSCode extension
 - cd <your-extension-folder>
 - npm install -g vsce
 - vsce package
@@ -200,4 +200,4 @@ To install the extension, open VSCode and go to the Extensions view.
 Click on the ellipsis (...) in the top right corner and select "Install from VSIX..."
 Then select the generated .vsix file.
 
-16. To add it after you have built it on your own install of VSCode, ```ctrl + p``` and type ```>extensions``` to see ```Extensions: Install from VSIX...``` listed.
+13. To add it after you have built it on your own install of VSCode, ```ctrl + p``` and type ```>extensions``` to see ```Extensions: Install from VSIX...``` listed.
