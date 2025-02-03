@@ -195,6 +195,8 @@ I won't give steps as a tutorial; but you can see how the model running using st
 - npm install -g vsce
 - vsce package
 
+***if npm install gives issues as vsce wont install: npx @vscode/vsce package***
+
 This will generate a .vsix file which you can install in VSCode
 To install the extension, open VSCode and go to the Extensions view.
 Click on the ellipsis (...) in the top right corner and select "Install from VSIX..."

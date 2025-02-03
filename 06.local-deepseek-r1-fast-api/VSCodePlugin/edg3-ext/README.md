@@ -20,6 +20,10 @@ You can use the smaller models of Deepseek, just change the ```8b``` to ```1.5b`
 The button doesn't disable when you send a query to the API.
 
 ## Release Notes
+### 0.0.2
+
+Secondary release, move to 1.5b for smaller machines; adjusted logic a bit. Will make 0.0.3 the 8b model varient of this clean up.
+
 ### 0.0.1
 
 Initial release of an extension to bring a little faster, prettier, method to ask Deepseek R1 queries through VSCode while working there.

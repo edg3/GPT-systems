@@ -45,7 +45,7 @@ export function activate(context: vscode.ExtensionContext) {
 
         panel.webview.onDidReceiveMessage(async (message: any) => {
             if (message.command === 'chat') {
-                let payload = { model: 'deepseek-r1:8b', prompt: message.text, stream: false };
+                let payload = { model: 'deepseek-r1:1.5b', prompt: message.text, stream: false };
                 try {
                     const data = await postData(url, payload);
                     let responseText = data.response;
@@ -85,11 +85,18 @@ function getWebviewContent() {
             button:hover {
                 background-color: var(--vscode-button-hoverBackground);
             }
+            button:disabled {
+                background-color: #cccccc;
+                color: #666666;
+                border: 1px solid #999999;
+                cursor: not-allowed;
+                opacity: 0.6;
+            }
         </style>
     </head>
     <body>
         <h2>Deepseek Chat</h2>
-        <textarea id="prompt" rows="3" placeholder="Ask something from Deepseek R1 8b here..."></textarea><br>
+        <textarea id="prompt" rows="3" placeholder="Ask something from Deepseek R1 1.5b here..."></textarea><br>
         <button id="askBtn">Ask</button><br>
         <div id="response"></div>
         <div id="thinking"></div>
@@ -98,6 +105,9 @@ function getWebviewContent() {
             document.getElementById('askBtn').addEventListener('click', () => {
                 const text = document.getElementById('prompt').value;
                 vscode.postMessage({ command: 'chat', text });
+                document.getElementById('askBtn').disabled = true;
+                document.getElementById('response').innerHTML = '';
+                document.getElementById('thinking').innerHTML = 'Thinking...';
             });
             window.addEventListener('message', event => {
                 const { command, text } = event.data;
@@ -107,6 +117,7 @@ function getWebviewContent() {
                     document.getElementById('thinking').innerHTML = splt[0];
                     document.getElementById('response').innerHTML = marked.parse(splt[1].trim());
                 }
+                document.getElementById('askBtn').disabled = false;
             });
         </script>
         <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
