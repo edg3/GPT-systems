@@ -2,7 +2,7 @@
   "name": "edg3-ext",
   "displayName": "edg3-ext",
   "description": "VSCode ask local Deepseek R1 8b for help",
-  "version": "0.0.3",
+  "version": "4",
   "engines": {
     "vscode": "^1.96.0"
   },

@@ -20,7 +20,11 @@ You can use the smaller models of Deepseek, just change the ```8b``` to ```1.5b`
 The button doesn't disable when you send a query to the API.
 
 ## Release Notes
-### 0.0.2
+### 0.0.4
+
+Version 0.0.3 lunch adjustments moved back to 8b on `main` branch.
+
+### 0.0.3
 
 Secondary release, move to 1.5b for smaller machines; adjusted logic a bit. Will make 0.0.3 the 8b model varient of this clean up.
 
