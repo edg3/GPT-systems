@@ -45,7 +45,7 @@ export function activate(context: vscode.ExtensionContext) {
 
         panel.webview.onDidReceiveMessage(async (message: any) => {
             if (message.command === 'chat') {
-                let payload = { model: 'deepseek-r1:1.5b', prompt: message.text, stream: false };
+                let payload = { model: 'deepseek-r1:8b', prompt: message.text, stream: false };
                 try {
                     const data = await postData(url, payload);
                     let responseText = data.response;
@@ -96,7 +96,7 @@ function getWebviewContent() {
     </head>
     <body>
         <h2>Deepseek Chat</h2>
-        <textarea id="prompt" rows="3" placeholder="Ask something from Deepseek R1 1.5b here..."></textarea><br>
+        <textarea id="prompt" rows="3" placeholder="Ask something from Deepseek R1 8b here..."></textarea><br>
         <button id="askBtn">Ask</button><br>
         <div id="response"></div>
         <div id="thinking"></div>
