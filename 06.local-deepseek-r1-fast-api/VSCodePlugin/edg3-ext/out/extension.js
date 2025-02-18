@@ -119,13 +119,20 @@ function getWebviewContent() {
                 cursor: not-allowed;
                 opacity: 0.6;
             }
+            pre {
+                white-space: pre-wrap;       /* Since CSS 2.1 */
+                white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+                white-space: -pre-wrap;      /* Opera 4-6 */
+                white-space: -o-pre-wrap;    /* Opera 7 */
+                word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            }
         </style>
     </head>
     <body>
         <h2>Deepseek Chat</h2>
         <textarea id="prompt" rows="3" placeholder="Ask something from Deepseek R1 8b here..."></textarea><br>
         <button id="askBtn">Ask</button><br>
-        <div id="response"></div>
+        <pre id="response"></pre>
         <div id="thinking"></div>
         <script>
             const vscode = acquireVsCodeApi();
@@ -142,12 +149,11 @@ function getWebviewContent() {
                     let splt = text.split('</think>');
                     splt[0] = splt[0].replace(/<think>/g, '<span style="color: #ccc; font-style: italic;">') + '</span>';
                     document.getElementById('thinking').innerHTML = splt[0];
-                    document.getElementById('response').innerHTML = marked.parse(splt[1].trim());
+                    document.getElementById('response').innerHTML = splt[1].trim();
                 }
                 document.getElementById('askBtn').disabled = false;
             });
         </script>
-        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     </body>
     </html>`;
 }
