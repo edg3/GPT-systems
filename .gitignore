@@ -413,3 +413,5 @@ godot-docs-html-stable/
 *.txt
 *.lock
 model/
+Model/
+data.jsonl
